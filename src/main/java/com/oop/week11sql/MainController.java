@@ -1,9 +1,9 @@
 package com.oop.week11sql;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -25,7 +25,7 @@ public class MainController {
         return orangnyaRepository.findAll();
     }
 
-    @GetMapping(path = "/orangnya/add")
+    @GetMapping("/orangnya/add")
     public @ResponseBody String addNewOrang(
             @RequestParam String nama, 
             @RequestParam String nim, 
@@ -45,12 +45,12 @@ public class MainController {
         return "Orangnya Saved";
     }
 
-    @GetMapping(path = "/orangnya/{id}")
+    @GetMapping("/orangnya/{id}")
     public @ResponseBody Orangnya getOrangById(@PathVariable int id) {
         return orangnyaRepository.findById(id).orElse(null);
     }
 
-    @GetMapping(path = "/orangnya/update/{id}")
+    @GetMapping("/orangnya/update/{id}")
     public @ResponseBody String updateOrang(
             @PathVariable int id, 
             @RequestParam String nama, 
@@ -73,7 +73,7 @@ public class MainController {
         return "Orangnya Updated";
     }
 
-    @GetMapping(path = "/orangnya/delete/{id}")
+    @GetMapping("/orangnya/delete/{id}")
     public @ResponseBody String deleteOrang(@PathVariable int id) {
         orangnyaRepository.deleteById(id);
         return "Orangnya Deleted";
@@ -84,7 +84,7 @@ public class MainController {
         return nilaiRepository.findAll();
     }
 
-    @GetMapping(path = "/nilai/add")
+    @GetMapping("/nilai/add")
     public @ResponseBody String addNewNilai(
             @RequestParam String nim, 
             @RequestParam String mata_kuliah,
@@ -100,12 +100,12 @@ public class MainController {
         return "Nilai Saved";
     }
 
-    @GetMapping(path = "/nilai/{id}")
+    @GetMapping("/nilai/{id}")
     public @ResponseBody Nilai getNilaiById(@PathVariable int id) {
         return nilaiRepository.findById(id).orElse(null);
     }
 
-    @GetMapping(path = "/nilai/update/{id}")
+    @GetMapping("/nilai/update/{id}")
     public @ResponseBody String updateNilai(
             @PathVariable int id, 
             @RequestParam String nim, 
@@ -124,7 +124,7 @@ public class MainController {
         return "Nilai Updated";
     }
 
-    @GetMapping(path = "/nilai/delete/{id}")
+    @GetMapping("/nilai/delete/{id}")
     public @ResponseBody String deleteNilai(@PathVariable int id) {
         nilaiRepository.deleteById(id);
         return "Nilai Deleted";
@@ -135,7 +135,7 @@ public class MainController {
         return matakuliahRepository.findAll();
     }
 
-    @GetMapping(path = "/matakuliah/add")
+    @GetMapping("/matakuliah/add")
     public @ResponseBody String addNewMK(
             @RequestParam String kode_mk, 
             @RequestParam String nama_mk, 
@@ -149,12 +149,12 @@ public class MainController {
         return "Mata Kuliah Saved";
     }
 
-    @GetMapping(path = "/matakuliah/{id}")
+    @GetMapping("/matakuliah/{id}")
     public @ResponseBody MataKuliah getMKById(@PathVariable int id) {
         return matakuliahRepository.findById(id).orElse(null);
     }
 
-    @GetMapping(path = "/matakuliah/update/{id}")
+    @GetMapping("/matakuliah/update/{id}")
     public @ResponseBody String updateMK(
             @PathVariable int id, 
             @RequestParam String kode_mk, 
@@ -171,7 +171,7 @@ public class MainController {
         return "Mata Kuliah Updated";
     }
 
-    @GetMapping(path = "/matakuliah/delete/{id}")
+    @GetMapping("/matakuliah/delete/{id}")
     public @ResponseBody String deleteMK(@PathVariable int id) {
         matakuliahRepository.deleteById(id);
         return "Mata Kuliah Deleted";
@@ -182,7 +182,7 @@ public class MainController {
         return jurusanRepository.findAll();
     }
 
-    @GetMapping(path = "/jurusan/add")
+    @GetMapping("/jurusan/add")
     public @ResponseBody String addNewJurusan(
             @RequestParam String nama_jurusan, 
             @RequestParam String kode_jurusan, 
@@ -196,12 +196,12 @@ public class MainController {
         return "Jurusan Saved";
     }
 
-    @GetMapping(path = "/jurusan/{id}")
+    @GetMapping("/jurusan/{id}")
     public @ResponseBody Jurusan getJurusanById(@PathVariable int id) {
         return jurusanRepository.findById(id).orElse(null);
     }
 
-    @GetMapping(path = "/jurusan/update/{id}")
+    @GetMapping("/jurusan/update/{id}")
     public @ResponseBody String updateJurusan(
             @PathVariable int id, 
             @RequestParam String nama_jurusan, 
@@ -218,7 +218,7 @@ public class MainController {
         return "Jurusan Updated";
     }
 
-    @GetMapping(path = "/jurusan/delete/{id}")
+    @GetMapping("/jurusan/delete/{id}")
     public @ResponseBody String deleteJurusan(@PathVariable int id) {
         jurusanRepository.deleteById(id);
         return "Jurusan Deleted";
@@ -229,7 +229,7 @@ public class MainController {
         return jadwalRepository.findAll();
     }
 
-    @GetMapping(path = "/jadwal/add")
+    @GetMapping("/jadwal/add")
     public @ResponseBody String addNewJadwal(
             @RequestParam String hari, 
             @RequestParam String jam, 
@@ -245,12 +245,12 @@ public class MainController {
         return "Jadwal Saved";
     }
 
-    @GetMapping(path = "/jadwal/{id}")
+    @GetMapping("/jadwal/{id}")
     public @ResponseBody Jadwal getJadwalById(@PathVariable int id) {
         return jadwalRepository.findById(id).orElse(null);
     }
 
-    @GetMapping(path = "/jadwal/update/{id}")
+    @GetMapping("/jadwal/update/{id}")
     public @ResponseBody String updateJadwal(
             @PathVariable int id, 
             @RequestParam String hari, 
@@ -269,7 +269,7 @@ public class MainController {
         return "Jadwal Updated";
     }
 
-    @GetMapping(path = "/jadwal/delete/{id}")
+    @GetMapping("/jadwal/delete/{id}")
     public @ResponseBody String deleteJadwal(@PathVariable int id) {
         jadwalRepository.deleteById(id);
         return "Jadwal Deleted";
@@ -280,7 +280,7 @@ public class MainController {
         return dosenRepository.findAll();
     }
 
-    @GetMapping(path = "/dosen/add")
+    @GetMapping("/dosen/add")
     public @ResponseBody String addNewDosen(
             @RequestParam String nip, 
             @RequestParam String nama_dosen, 
@@ -294,12 +294,12 @@ public class MainController {
         return "Dosen Saved";
     }
 
-    @GetMapping(path = "/dosen/{id}")
+    @GetMapping("/dosen/{id}")
     public @ResponseBody Dosen getDosenById(@PathVariable int id) {
         return dosenRepository.findById(id).orElse(null);
     }
 
-    @GetMapping(path = "/dosen/update/{id}")
+    @GetMapping("/dosen/update/{id}")
     public @ResponseBody String updateDosen(
             @PathVariable int id, 
             @RequestParam String nip, 
@@ -316,7 +316,7 @@ public class MainController {
         return "Dosen Updated";
     }
 
-    @GetMapping(path = "/dosen/delete/{id}")
+    @GetMapping("/dosen/delete/{id}")
     public @ResponseBody String deleteDosen(@PathVariable int id) {
         dosenRepository.deleteById(id);
         return "Dosen Deleted";
