@@ -11,10 +11,10 @@ import jakarta.persistence.Table;
 public class MataKuliah {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public int id;
-    public String kode_mk;
-    public String nama_mk;
-    public int sks;
+    private int id;
+    private String kode_mk;
+    private String nama_mk;
+    private int sks;
 
     public MataKuliah() {}
 

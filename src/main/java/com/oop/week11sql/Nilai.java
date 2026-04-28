@@ -12,11 +12,11 @@ import jakarta.persistence.Table;
 public class Nilai {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public int id;
-    public String nim;
-    public String mata_kuliah;
-    public String semester;
-    public double nilai_akhir;
+    private int id;
+    private String nim;
+    private String mata_kuliah;
+    private String semester;
+    private double nilai_akhir;
 
     public Nilai() {}
 

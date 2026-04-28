@@ -13,13 +13,13 @@ public class Orangnya {
     }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public int id;
-    public String nama;
-    public String nim;
-    public String kelas;
-    public int killcount;
-    public int death;
-    public int assist;
+    private int id;
+    private String nama;
+    private String nim;
+    private String kelas;
+    private int killcount;
+    private int death;
+    private int assist;
 
     public Orangnya(String nama, String nim, String kelas, int killcount, int death, int assist) {
         this.nama = nama;
