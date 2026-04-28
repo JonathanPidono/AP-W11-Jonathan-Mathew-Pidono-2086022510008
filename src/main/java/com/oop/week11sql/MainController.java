@@ -79,10 +79,6 @@ public class MainController {
         return "Orangnya Deleted";
     }
 
-
-    // ==========================================
-    // 2. ENDPOINT: NILAI
-    // ==========================================
     @GetMapping("/nilai/all")
     public @ResponseBody Iterable<Nilai> getAllNilai() {
         return nilaiRepository.findAll();
@@ -134,10 +130,6 @@ public class MainController {
         return "Nilai Deleted";
     }
 
-
-    // ==========================================
-    // 3. ENDPOINT: MATAKULIAH
-    // ==========================================
     @GetMapping("/matakuliah/all")
     public @ResponseBody Iterable<MataKuliah> getAllMK() {
         return matakuliahRepository.findAll();
@@ -185,10 +177,6 @@ public class MainController {
         return "Mata Kuliah Deleted";
     }
 
-
-    // ==========================================
-    // 4. ENDPOINT: JURUSAN
-    // ==========================================
     @GetMapping("/jurusan/all")
     public @ResponseBody Iterable<Jurusan> getAllJurusan() {
         return jurusanRepository.findAll();
@@ -236,10 +224,6 @@ public class MainController {
         return "Jurusan Deleted";
     }
 
-
-    // ==========================================
-    // 5. ENDPOINT: JADWAL
-    // ==========================================
     @GetMapping("/jadwal/all")
     public @ResponseBody Iterable<Jadwal> getAllJadwal() {
         return jadwalRepository.findAll();
@@ -291,10 +275,6 @@ public class MainController {
         return "Jadwal Deleted";
     }
 
-
-    // ==========================================
-    // 6. ENDPOINT: DOSEN
-    // ==========================================
     @GetMapping("/dosen/all")
     public @ResponseBody Iterable<Dosen> getAllDosen() {
         return dosenRepository.findAll();
