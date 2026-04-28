@@ -301,10 +301,17 @@ public class MainController {
 
     @GetMapping(path = "/dosen/update/{id}")
     public @ResponseBody String updateDosen(
-            @PathVariable int id, @RequestParam String nip, @RequestParam String nama_dosen, @RequestParam String email) {
+            @PathVariable int id, 
+            @RequestParam String nip, 
+            @RequestParam String nama_dosen, 
+            @RequestParam String email) {
+
         Dosen d = dosenRepository.findById(id).orElse(null);
         if (d == null) return "Data tidak ditemukan";
-        d.setNip(nip); d.setNama_dosen(nama_dosen); d.setEmail(email);
+
+        d.setNip(nip); 
+        d.setNama_dosen(nama_dosen); 
+        d.setEmail(email);
         dosenRepository.save(d);
         return "Dosen Updated";
     }
